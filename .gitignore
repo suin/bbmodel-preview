@@ -1,0 +1,15 @@
+node_modules/
+js/
+dist/
+*.tsbuildinfo
+coverage/
+*.lcov
+logs/
+*.log
+.env
+.env.*
+!.env.example
+!.envrc
+.cache/
+.DS_Store
+.review/

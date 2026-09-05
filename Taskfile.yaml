@@ -1,0 +1,51 @@
+version: "3"
+
+tasks:
+  check:
+    desc: Run all checks
+    cmds:
+      - task: format:check
+      - task: lint
+      - task: typecheck
+      - task: test
+
+  ci:
+    desc: Run CI pipeline (frozen install + all checks)
+    cmds:
+      - bun install --frozen-lockfile
+      - task: check
+
+  lint:
+    desc: Run the linter
+    cmds:
+      - bunx oxlint
+
+  format:
+    desc: Format source files
+    cmds:
+      - bunx oxfmt --write .
+
+  format:check:
+    desc: Check source formatting
+    cmds:
+      - bunx oxfmt --check .
+
+  typecheck:
+    desc: Type check without emitting
+    cmds:
+      - bunx tsc -b --noEmit
+
+  test:
+    desc: Run the tests
+    cmds:
+      - bun test --pass-with-no-tests
+
+  build:
+    desc: Build the project
+    cmds:
+      - bunx tsc -b
+
+  clean:
+    desc: Clean build artifacts
+    cmds:
+      - rm -rf js *.tsbuildinfo

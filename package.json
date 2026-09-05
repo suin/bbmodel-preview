@@ -1,0 +1,28 @@
+{
+  "name": "bbmodel-preview",
+  "private": true,
+  "type": "module",
+  "module": "src/server.ts",
+  "scripts": {
+    "dev": "bun --watch src/server.ts",
+    "start": "bun src/server.ts",
+    "test": "bun test --pass-with-no-tests",
+    "typecheck": "tsc -b --noEmit"
+  },
+  "dependencies": {
+    "chokidar": "^5.0.0",
+    "three": "latest",
+    "vite": "latest"
+  },
+  "devDependencies": {
+    "@suin/oxlint": "latest",
+    "@tsconfig/bun": "latest",
+    "@tsconfig/strictest": "latest",
+    "@types/bun": "latest",
+    "@types/three": "latest",
+    "oxfmt": "latest",
+    "oxlint": "1.64.0",
+    "oxlint-tsgolint": "latest",
+    "typescript": "latest"
+  }
+}

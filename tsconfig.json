@@ -1,0 +1,15 @@
+{
+  "extends": ["@tsconfig/bun", "@tsconfig/strictest"],
+  "compilerOptions": {
+    "composite": true,
+    "outDir": "./js",
+    "rootDir": ".",
+    "declaration": true,
+    "declarationMap": true,
+    "jsx": "react-jsx",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "ignoreDeprecations": "6.0",
+    "types": ["bun", "vite/client"]
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "vite.config.ts"]
+}
